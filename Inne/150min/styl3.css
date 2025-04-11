@@ -1,0 +1,63 @@
+body {
+    margin: 0;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin: 0;
+    background-color: mintcream;
+}
+
+.naglowek {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    background-color: seagreen;
+}
+
+.stopka {
+    display: flex;
+    align-items: center;
+    background-color: seagreen;
+    padding: 20px;
+}
+
+.image {
+    padding-right: 100px;
+} 
+
+img {
+    box-shadow: 10px 5px 5px gray;
+}
+
+.lewy_blok {
+    width: 75%;
+    padding-right: 250px;
+}
+
+.lewy_blok2 {
+    width: 75%;
+    padding-left: 220px;
+
+}
+
+.prawy_blok {
+    width: 25%;
+    text-align: end;
+}
+
+.srodek {
+    margin: 80px;
+}
+
+.guziki {
+    padding: 15px;
+}
+
+.pobierz {
+    width: 100px;
+    height: 50px;
+}
+
+.data,
+.lowisko,
+.sedzia {
+    margin-top: 20px;
+}

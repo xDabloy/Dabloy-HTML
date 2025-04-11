@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Przeliczanie systemu szesnastkowego na dziesiętny</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: 100vh;
+        }
+        input {
+            margin-bottom: 20px;
+            padding: 10px;
+            font-size: 16px;
+        }
+        div {
+            font-size: 20px;
+        }
+        .buttom {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body>
+    <button onclick="Przeliczanie()">Sprawdz</button>
+    <input id="a" class="centr">
+    <div id="b"></div>
+    <div id="c" class="centr"></div>
+
+    <script>
+        function Przeliczanie() {
+            var a = document.getElementById('a').value;
+            var first;
+            var second;
+
+            if(a == "a") {
+                first = 10;
+            }
+
+           else if(a == "b") {
+                first = 11;
+           }
+
+           else if(a == "c") {
+                first = 12;
+           }
+
+           else if(a == "d") {
+                first = 13;
+            }
+
+           else if(a == "e") {
+                first = 14;
+            }
+
+           else if(a == "f") {
+                first = 15;
+            }
+            
+            else if(Number(a)) {
+                first = a;
+            }
+            second = second * 16
+            first = first * 1
+            var result = first;
+            var resultContainer = document.getElementById('c');
+            resultContainer.innerText = "Wynik to" + result;
+            
+        }
+    </script>
+</body>
+</html>

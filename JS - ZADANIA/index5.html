@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Sprawdź napis</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+
+        input,
+        button {
+            padding: 10px;
+            font-size: 16px;
+            margin-top: 10px;
+        }
+
+        #wynik {
+            margin-top: 20px;
+            font-weight: bold;
+            color: #333;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>Sprawdź, czy napis ma co najmniej 6 znaków i kończy się na "kot"</h2>
+    <input type="text" id="napisInput" placeholder="Wpisz swój napis">
+    <br>
+    <button onclick="sprawdzNapis()">Sprawdź</button>
+
+    <div id="wynik"></div>
+
+    <script>
+        function sprawdzNapis() {
+            const napis = document.getElementById("napisInput").value;
+            const wynikElement = document.getElementById("wynik");
+
+            const maSzescZnakow = napis.length >= 6;
+            const konczySieNaKot = napis.endsWith("kot");
+
+            let komunikat = "";
+
+            if (maSzescZnakow && konczySieNaKot) {
+                komunikat = "Napis ma co najmniej 6 znaków i kończy się na 'kot'.";
+            } else if (maSzescZnakow) {
+                komunikat = "Napis ma co najmniej 6 znaków, ale nie kończy się na 'kot'.";
+            } else if (konczySieNaKot) {
+                komunikat = "Napis kończy się na 'kot', ale ma mniej niż 6 znaków.";
+            } else {
+                komunikat = "Napis nie ma co najmniej 6 znaków i nie kończy się na 'kot'.";
+            }
+
+            wynikElement.textContent = komunikat;
+        }
+    </script>
+
+</body>
+
+</html>
