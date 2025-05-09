@@ -1,0 +1,45 @@
+.wszystko {
+    font-family: Garamond;
+}
+
+#lewo {
+    background-color: #FAEBD7;
+    height: 450px;
+    width: 55%;
+    text-align: center;
+}
+
+#prawo {
+    background-color: #FAEBD7;
+    height: 450px;
+    width: 45%;
+    text-align: left;
+}
+
+#gora {
+    background-color: #3CB371;
+    padding: 50px;
+    color: white;
+    font-size: 130%;
+    text-align: center;
+}
+
+#dol {
+    background-color: #3CB371;
+    padding: 50px;
+    color: white;
+    font-size: 130%;
+    text-align: center;
+}
+
+.calosc {
+    display: flex;
+}
+
+.ryba {
+    scale: 500px;
+    width: 500px;
+    padding: 3px;
+    margin: 15px;
+    border: 2px;
+}
