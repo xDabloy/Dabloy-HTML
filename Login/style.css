@@ -19,7 +19,7 @@ body {
     font-family: Arial, sans-serif;
 }
 
-.login-container {
+.login-con {
     background: linear-gradient(210deg, #50affd, #2ab4a6);
     backdrop-filter: blur(500px);
     border-radius: 20px;
