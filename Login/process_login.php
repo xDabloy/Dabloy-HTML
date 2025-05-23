@@ -18,7 +18,7 @@ $Result = mysqli_query($connection, "SELECT * FROM `user` WHERE user.login = '$l
 if ($Result) {
     $user = mysqli_num_rows($Result);
     if ($user == 1) {
-        echo "siemano kolano $login.";
+        echo "Witaj $login.";
     } else {
         header('location: login.html?error=1');
     }
