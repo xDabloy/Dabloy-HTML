@@ -1,31 +1,31 @@
 <?php
-$server = "localhost";
-$username = "root";
-$password = "";
-$database = "logowanie";
+$server = 'localhost';
+$dbname = 'logowanie';
+$user = 'root';
+$pass = '';
 
-$connection = mysqli_connect($server, $username, $password, $database);
+$connection = mysqli_connect($server, $user, $pass, $dbname);
 
 if (!$connection) {
-    die($connection);
-}
-
-foreach ($_POST as $key => $value) {
-    echo $key, "; ", $value, " ";
+    die('Connection failed: ' . mysqli_connect_error());
 }
 
 $login = $_POST["login"];
-$haslo = $_POST["haslo"];
+$password = $_POST["haslo"];
 
-$queryResoult = mysqli_query($connection, "SELECT * FROM user WHERE user.login = '$login' AND user.haslo = '$haslo'");
+$Result = mysqli_query($connection, "SELECT * FROM `user` WHERE user.login = '$login' AND user.haslo = '$password'");
 
-mysqli_fetch_array($queryResoult);
-
-if (mysqli_num_rows($queryResoult) > 0) {
-    echo "Zalogowano pomyślnie.";
+if ($Result) {
+    $user = mysqli_num_rows($Result);
+    if ($user == 1) {
+        echo "siemano kolano $login.";
+    } else {
+        header('location: login.html?error=1');
+    }
 } else {
-    echo "Niepoprawny login lub hasło.";
+    header('location: login.html?error=1');
 }
+
 
 mysqli_close($connection);
 ?>
