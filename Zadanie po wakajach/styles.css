@@ -1,0 +1,59 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: linear-gradient(to right, #bbbfcb, #005eff);
+    height: 100vh;
+    position: relative; /* Dodane dla piłki */
+}
+
+.log-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+    position: relative;
+    z-index: 2;
+    background: rgba(255,255,255,0.8); /* opcjonalnie dla lepszej widoczności */
+    padding: 30px 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+}
+
+.pilka {
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+    height: 100px;
+    width: 100px;
+    background-color: black;
+    position: absolute;
+    border-radius: 50%;
+    animation: moveball 2s infinite alternate, kolor 3s infinite linear;
+    top: 0;
+}
+
+@keyframes moveball {
+    from {
+        top: 0;
+    }
+    to {
+        top: calc(100vh - 100px);
+    }
+}
+
+@keyframes kolor {
+    0% {
+        background-color: red;
+    }
+    33% {
+        background-color: green;
+    }
+    66% {
+        background-color: blue;
+    }
+    100% {
+        background-color: red;
+    }
+}
