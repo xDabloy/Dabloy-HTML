@@ -1,0 +1,65 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Garamond;
+}
+
+h2 {
+  text-align: center;
+}
+
+.gora_lewo,
+.gora_prawo {
+  background-color: rgb(95, 150, 160);
+  width: 20%;
+  height: 90px;
+  text-align: right;
+  float: left ;
+  color: yellow;
+
+}
+
+.gora_srodek {
+  background-color: rgb(95, 150, 160);
+  color: yellow;
+  width: 60%;
+  height: 90px;
+  float: left;
+  text-align: right;
+}
+
+.mid_lewy,
+.mid_prawy {
+  background-color: rgb(175, 238, 238);
+  width: 50%;
+  height: 250px;
+  float: left;
+  text-align: left;
+}
+
+.glowny {
+  background-color: rgb(95, 158, 160);
+  padding: 30px;
+}
+
+.stopka {
+  background-color: rgb(175, 238, 238);
+  padding: 10px;
+}
+
+table {
+  border: 2px dotted green;
+  width: 100%;
+  border-collapse: collapse;
+}
+
+td {
+  border: 2px dotted green;
+}
+
+th {
+  border: 2px dotted green;
+  background-color: green;
+  color: yellow;
+}
