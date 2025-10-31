@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalkulator BMI</title>
+    <link rel="stylesheet" href="styl.css">
+
+</head>
+
+<body>
+    <div class="baner">
+        <h2>Kalkulator BMI</h2>
+    </div>
+    <div class="plewy">
+        <h2>Wybierz opcję</h2>
+        <ul>
+            <li><a href="index.html">Oblicz BMI</a></li>
+            <li><a href="o-bmi.html">Co to jest BMI?</a></li>
+            <li><a href="kontakt.htm">Kontakt</a></li>
+        </ul>
+    </div>
+    <div class="pprawy">
+        <h1>Oblicz swój wskaźnik BMI</h1>
+        <form action="input" onclick="function oblicz">
+            <p class="form">Waga (kg) <input type="text"></p>
+            <p class="form">Wzrost (cm) <input type="text"> </p>
+            <button>Oblicz BMI</button>
+            <p id="wynik">Wynik:</p>
+        </form>
+    </div>
+    <div class="stopka">
+        <h3>Kalkulator BMI</h3>
+        <p>Zadanie wykonal: ja, czlowiek</p>
+    </div>
+
+    <script src="skrypt.js"></script>
+</body>
+
+</html>
