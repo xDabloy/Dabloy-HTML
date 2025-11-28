@@ -1,6 +1,31 @@
+:root {
+  --mid-bg-color: rgb(207, 207, 192);
+  --lewy-bg-color: rgb(150, 111, 92);
+  --stopka-bg-color: rgb(150, 111, 92);
+  --container-bg-color: #b9b9b9;
+  --text-color: #000000;
+  --accent-color: #8ab4f8;
+  --body-bg-color: #ffffff;
+}
+
+.dark-mode {
+  --container-bg-color: #333533;
+  --mid-bg-color: rgb(85, 85, 85);
+  --lewy-bg-color: #333333;
+  --stopka-bg-color:#333333;
+  --text-color: #f0f0f0;
+  --accent-color: #2f3030;
+  --body-bg-color: #000000;
+}
+
 * {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--body-bg-color);
+  color: var(--text-color);
 }
 
 h1 {
@@ -8,8 +33,8 @@ h1 {
 }
 
 h2 {
-    margin-top: 15px;
-    margin-bottom: 15px;
+  margin-top: 15px;
+  margin-bottom: 15px;
 }
 
 img {
@@ -26,15 +51,15 @@ img {
   justify-content: center;
   column-gap: 200px;
   display: flex;
-  background-color: rgb(150, 111, 92);
-  padding: 15px;
+  background-color: var(--lewy-bg-color);
 }
 
 .p1,
 .p2,
 .p3 {
   background-color: white;
-  padding: 10px;
+  padding: 15px;
+  margin: 15px;
   border-radius: 9999999999px;
   border: 1px solid, white;
   a {
@@ -54,23 +79,22 @@ img {
 }
 
 .mid {
-    background-color: rgb(207, 207, 192);
-    padding: 10px;
+  background-color: var(--mid-bg-color);
+  padding: 10px;
 }
 
 .stopka {
-    background-color: rgb(150, 111, 92);
-    padding: 40px;
-    color: white;
-    text-align: center;
+  background-color: var(--stopka-bg-color);
+  padding: 40px;
+  color: white;
+  text-align: center;
 }
-    ul {
-        padding-left: 100px;
-    }
-
+ul {
+  padding-left: 100px;
+}
 
 table {
-    border: 1px, black, dashed;
-    width: 60%;
-    margin-left: 50px;
+  border: 1px, black, dashed;
+  width: 60%;
+  margin-left: 50px;
 }
