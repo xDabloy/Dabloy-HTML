@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Js</title>
+  </head>
+  <body>
+    <script>
+      let a = 5;
+      switch (a) {
+        case 1:
+          console.log("Przelaczam do dzialu obslugi reklamacji");
+          break;
+        case 2:
+        case 5:
+        case 8:
+          console.log("hakuję...");
+          break;
+        case 3:
+          alert("haslo: okoń");
+          break;
+        case 4:
+        case 6:
+        case 7:
+        case 9:
+          doWork();
+          break;
+        case "secretInput":
+          console.log("secretInput");
+          break;
+        default:
+          console.log("not implemented method");
+          break;
+      }
+      function doWork() {
+        console.log("provide magic");
+      }
+    </script>
+  </body>
+</html>
