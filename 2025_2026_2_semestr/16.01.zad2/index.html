@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let Numbers = [
+        randomnumbers(),
+        randomnumbers(),
+        randomnumbers(),
+        randomnumbers(),
+        randomnumbers(),
+        randomnumbers(),
+        randomnumbers(),
+        randomnumbers(),
+        randomnumbers(),
+        randomnumbers(),
+      ];  //zad 1
+
+      let sortedNumbers = Numbers.sortNumbers();
+
+      console.log(Numbers[7].toString()); //zad 2
+      console.log(Numbers.toString()); //zad do 3
+      console.log(sortedNumbers.toString()); //zad 3
+      console.log(sortedNumbers.toString());  //zad 3
+      let  sortedNumbers = Numbers + sortNumbers() //zad 3
+
+      Numbers.pop(9);
+      console.log(Numbers.toString()); //zad 4
+
+      Numbers.push(randomnumbers());
+      console.log(Numbers.toString()); //zad 5
+
+      function sortNumbers() {
+        if (a < b) {
+          return -1;
+        } else if (a > b) {
+          return +1;
+        } else if (a === b) {
+          return 0;
+        }
+      }
+
+      function randomnumbers() {
+        return Math.floor(Math.random() * 100);
+      }
+    </script>
+  </body>
+</html>
