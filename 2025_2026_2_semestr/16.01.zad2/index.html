@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pl">
   <head>
     <meta charset="UTF-8" />
@@ -8,44 +8,59 @@
   <body>
     <script>
       let Numbers = [
-        randomnumbers(),
-        randomnumbers(),
-        randomnumbers(),
-        randomnumbers(),
-        randomnumbers(),
-        randomnumbers(),
-        randomnumbers(),
-        randomnumbers(),
-        randomnumbers(),
-        randomnumbers(),
-      ];  //zad 1
+        randomNumber(),
+        randomNumber(),
+        randomNumber(),
+        randomNumber(),
+        randomNumber(),
+        randomNumber(),
+        randomNumber(),
+        randomNumber(),
+        randomNumber(),
+        randomNumber(),
+      ]; // zadanie 1
+      console.log(Numbers.toString());
 
-      let sortedNumbers = Numbers.sortNumbers();
+      console.log(Numbers[7].toString()); // zadanie 2
 
-      console.log(Numbers[7].toString()); //zad 2
-      console.log(Numbers.toString()); //zad do 3
-      console.log(sortedNumbers.toString()); //zad 3
-      console.log(sortedNumbers.toString());  //zad 3
-      let  sortedNumbers = Numbers + sortNumbers() //zad 3
+      //   console.log(sortNumbers());
 
-      Numbers.pop(9);
-      console.log(Numbers.toString()); //zad 4
+      Numbers.pop();
+      console.log(Numbers.toString()); // zadanie 4
 
-      Numbers.push(randomnumbers());
-      console.log(Numbers.toString()); //zad 5
+      Numbers.push(number67());
+      console.log(Numbers.toString()); // zadanie 5
 
-      function sortNumbers() {
-        if (a < b) {
-          return -1;
-        } else if (a > b) {
-          return +1;
-        } else if (a === b) {
-          return 0;
+      [Numbers[0], Numbers[Numbers.length - 1]] = [
+        Numbers[Numbers.length - 1],
+        Numbers[0],
+      ];
+      console.log(Numbers.toString()); // zadanie 6
+
+      function number67() {
+        let random = Math.floor(Math.random() * 100);
+
+        if (random < 67) {
+          return random;
+        } else if (random >= 67) {
+          return "secretInput";
         }
       }
 
-      function randomnumbers() {
+      console.log(sortNumbers());
+
+      function randomNumber() {
         return Math.floor(Math.random() * 100);
+      }
+
+      function sortNumbers(Numbers) {
+        if (a < b) {
+          return -1;
+        } else if (a > b) {
+          return 1;
+        } else if (a === b) {
+          return 0;
+        }
       }
     </script>
   </body>
