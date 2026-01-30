@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input type="file" id="user-input" />
+  </body>
+  <script>
+    const input = document.getElementById("user-input");
+    input.addEventListener("change", function (event) {
+      const file = event.target.files[0];
+      if (file) {
+        console.log("Size: " + file.size);
+        console.log("Type: " + file.type);
+        console.log("Name: " + file.name);
+      }
+      const fileReader = new FileReader();
+
+      console.log("OnNothing: " + fileReader.readyState);
+
+      fileReader.onloadstart = function () {
+        console.log("Start: " + fileReader.readyState);
+      };
+      fileReader.onprogress = function () {
+        console.log("Progress: " + fileReader.readyState);
+      };
+      fileReader.onloadend = function () {
+        console.log("End: " + fileReader.readyState);
+        console.log(fileReader.result);
+      };
+      fileReader.readAsArrayBuffer(file);
+      
+    });
+  </script>
+</html>

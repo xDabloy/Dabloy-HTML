@@ -1,0 +1,59 @@
+* {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.glowny {
+    text-align: center;
+}
+
+.boczny { 
+    background-color: #C5CAE9;
+    width: 400%;
+    height: 600px;
+    overflow: auto;
+    float: left;
+}
+
+.sekcja1,
+.sekcja2 {
+    float: left;
+    width: 60%;
+    height: 300px;
+}
+
+.sekcja1 {
+    background-color: #9FA8DA;
+}
+
+.sekcja2 {
+    background-color: #7986CB;
+}
+
+.stopka {
+    background-color: #283593;
+    color: white;
+    padding: 20px;
+}
+
+.Opona {
+    background-color: #9FA8DA;
+    margin: 40px;
+    border: 2px, color(#283593);
+    border-radius: 30px;
+}
+
+img {
+    float: left;
+    padding: 20px;
+}
+
+h2 {
+    text-align: center;
+    margin: 0px;
+}
+
+h3 {
+    background-color: #7986CB;
+    color: white;
+    font-size: 140%;
+}
