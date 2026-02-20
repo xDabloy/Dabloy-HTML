@@ -1,0 +1,4 @@
+SELECT personel.id, personel.nazwisko
+FROM personel, rejestr
+WHERE rejestr.id_personel IS NULL 
+AND personel.id  = rejestr.id_personel;

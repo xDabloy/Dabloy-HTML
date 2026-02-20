@@ -10,13 +10,13 @@
 
 <body>
     <div class="glowny">
+        <h1>Witryna Internetowa</h1>
         <div class="boczny">
             <p><a href="https://opona.pl">więcej ofert</a></p>
         </div>
         <div class="sekcja1">
-            <img src="" alt="Opona" class="Opona">
+            <img src="opona.png" alt="Opona" class="Opona">
             <h2>Opona dnia</h2>
-            <p></p>
         </div>
         <div class="sekcja2">
             <h2>Najnowsze zamówienie</h2>
