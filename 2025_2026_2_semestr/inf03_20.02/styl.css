@@ -44,8 +44,7 @@ table {
 button {
     background-color: maroon;
     color: white;
-    border-radius: 20px;
-    margin-left: 20px;
+    margin: 20px;
     padding: 10px;
     border-radius: 20px;
 }

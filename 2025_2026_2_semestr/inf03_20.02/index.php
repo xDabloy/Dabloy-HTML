@@ -7,7 +7,7 @@ $database = "Zgloszenia";
 $connection = new mysqli($server, $username, $password, $database);
 
 if (!$connection) {
-  die($connection);
+    die($connection);
 }
 ?>
 <!DOCTYPE html>
@@ -21,6 +21,18 @@ if (!$connection) {
 </head>
 
 <body>
+    <?php
+    $server = "localhost";
+    $username = "root";
+    $password = "";
+    $database = "Zgloszenia";
+
+    $connection = new mysqli($server, $username, $password, $database);
+
+    if (!$connection) {
+        die($connection);
+    }
+    ?>
     <div class="naglowek">
         <h1>Zgloszenia wydarzeń</h1>
     </div>
@@ -46,7 +58,19 @@ if (!$connection) {
         <div class="prawy">
             <h2>Nowe zgloszenia</h2>
             <ol>
-                <p id="skrypt+2"></p>
+                <?php
+                $connection = mysqli_connect($server, $username, $password, $database);
+                
+                $query = 'SELECT personel.`id`, personel.`nazwisko` FROM `personel` WHERE personel.id NOT IN (SELECT rejestr.id_personel FROM rejestr)';
+                $wynik_zapytania = mysqli_query($connection, $query);
+                for ($i=0; $i < mysqli_num_rows($wynik_zapytania); $i++) { 
+                   //$dane = mysqli_fetch_row($wynik_zapytania);
+                   $dane = mysqli_fetch_array($wynik_zapytania);
+
+                   echo "<li>$dane[id] $dane[nazwisko]</li>";
+                }
+                mysqli_close($connection);
+                ?>
             </ol>
             <form action="post">
                 <p>Wybierz id osoby z listy</p>
@@ -61,4 +85,4 @@ if (!$connection) {
     </div>
 </body>
 
-</html>
+</html> 
