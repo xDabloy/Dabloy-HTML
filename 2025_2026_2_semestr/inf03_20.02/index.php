@@ -27,7 +27,7 @@ if (!$connection) {
     $password = "";
     $database = "Zgloszenia";
 
-    $connection = new mysqli($server, $username, $password, $database);
+    $connection = mysqli_connect($server, $username, $password, $database);
 
     if (!$connection) {
         die($connection);
@@ -39,20 +39,43 @@ if (!$connection) {
     <div class="glowny">
         <div class="lewy">
             <h2>Personel</h2>
-            <form action="post">
-                <input type="checkbox" checked>
-                <input type="checkbox">
-                <button id="skrypt_1">Pokaż</button>
+            <form method="POST">
+                <label for="policjant">Policjant</label>
+                <input type="radio" id="policjant" name="personel" value="policjant" checked>
+                <label for="ratownik">Ratownik</label>
+                <input type="radio" id="ratownik" name="personel" value="ratownik">
+
+                <button type="submit">Pokaż</button>
             </form>
             <table>
+
                 <tr>
                     <th>Id</th>
                     <th>Imię</th>
                     <th>Nazwisko</th>
                 </tr>
-                <tr></tr>
-                <tr></tr>
-                <tr></tr>
+
+                <?php
+                $connection = mysqli_connect($server, $username, $password, $database);
+
+                $opcja = "policjant";
+                if (isset($_POST['personel'])) {
+                    $opcja = $_POST['personel'];
+                }
+
+                echo "<h3>Wybrano opcję: $opcja</h3>";
+
+                $query = "SELECT id, imie, nazwisko FROM personel WHERE status='$opcja'";
+                $result = mysqli_query($connection, $query);
+
+                while ($row = mysqli_fetch_array($result)) {
+                    echo "<tr>";
+                    echo "<td>" . $row['id'] . "</td>";
+                    echo "<td>" . $row['imie'] . "</td>";
+                    echo "<td>" . $row['nazwisko'] . "</td>";
+                    echo "</tr>";
+                }
+                ?>
             </table>
         </div>
         <div class="prawy">
@@ -60,14 +83,13 @@ if (!$connection) {
             <ol>
                 <?php
                 $connection = mysqli_connect($server, $username, $password, $database);
-                
                 $query = 'SELECT personel.`id`, personel.`nazwisko` FROM `personel` WHERE personel.id NOT IN (SELECT rejestr.id_personel FROM rejestr)';
                 $wynik_zapytania = mysqli_query($connection, $query);
-                for ($i=0; $i < mysqli_num_rows($wynik_zapytania); $i++) { 
-                   //$dane = mysqli_fetch_row($wynik_zapytania);
-                   $dane = mysqli_fetch_array($wynik_zapytania);
+                for ($i = 0; $i < mysqli_num_rows($wynik_zapytania); $i++) {
+                    //$dane = mysqli_fetch_row($wynik_zapytania);
+                    $dane = mysqli_fetch_array($wynik_zapytania);
 
-                   echo "<li>$dane[id] $dane[nazwisko]</li>";
+                    echo "<li>$dane[id] $dane[nazwisko]</li>";
                 }
                 mysqli_close($connection);
                 ?>
@@ -85,4 +107,4 @@ if (!$connection) {
     </div>
 </body>
 
-</html> 
+</html>

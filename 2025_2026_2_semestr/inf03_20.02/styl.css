@@ -10,6 +10,12 @@
     padding: 10px;   
 }
 
+.stopka {
+    display: flex;
+    justify-content: left;
+    align-items: flex-start;
+}
+
 .lewy,
 .prawy {
     width: 50%;
@@ -36,9 +42,15 @@ tr {
     border: 1px solid black;
 }
 
+td {
+    border: 1px solid black;
+    
+}
+
 table {
     width: 85%;
     margin: auto;
+    border-collapse: collapse;
 }
 
 button {
