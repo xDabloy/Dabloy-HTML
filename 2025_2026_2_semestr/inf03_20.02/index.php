@@ -61,9 +61,7 @@ if (!$connection) {
                 $opcja = "policjant";
                 if (isset($_POST['personel'])) {
                     $opcja = $_POST['personel'];
-                }
-
-                echo "<h3>Wybrano opcję: $opcja</h3>";
+                    echo "<h3>Wybrano opcję: $opcja</h3>";
 
                 $query = "SELECT id, imie, nazwisko FROM personel WHERE status='$opcja'";
                 $result = mysqli_query($connection, $query);
@@ -75,6 +73,8 @@ if (!$connection) {
                     echo "<td>" . $row['nazwisko'] . "</td>";
                     echo "</tr>";
                 }
+                }
+                 mysqli_close($connection);
                 ?>
             </table>
         </div>
@@ -94,7 +94,7 @@ if (!$connection) {
                 mysqli_close($connection);
                 ?>
             </ol>
-            <form action="post">
+            <form method="POST">
                 <p>Wybierz id osoby z listy</p>
                 <input type="number">
                 <button>Dodaj zgloszenie</button>

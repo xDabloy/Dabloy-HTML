@@ -1,0 +1,71 @@
+* {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.glowny {
+    text-align: center;
+}
+
+.boczny { 
+    float: left;
+    background-color: #C5CAE9;
+    width: 40%;
+    height: 600px;
+    overflow: auto;
+}
+
+.sekcja1,
+.sekcja2 {
+    float: left;
+    width: 60%;
+    height: 300px;
+}
+
+.sekcja1 {
+    background-color: #9FA8DA;
+}
+
+.sekcja2 {
+    background-color: #7986CB;
+}
+
+.stopka {
+    clear: both;
+    background-color: #283593;
+    color: white;
+    padding: 20px;
+}
+
+
+
+img {
+    float: left;
+    padding: 20px;
+}
+
+h2 {
+    text-align: center;
+    margin: 0px;
+    padding: 15px;
+}
+
+h3 {
+    background-color: #7986CB;
+    color: white;
+    font-size: 140%;
+}
+
+.opona1 {
+    text-align: left;
+  background-color: #9FA8DA;
+  margin: 40px;
+  border: 2px dotted #283593;
+  border-radius: 30px;
+}
+
+.cena {
+    text-align: left;
+    background-color: #6982ff;
+    color: white;
+    width: 100%;
+}
