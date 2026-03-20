@@ -1,0 +1,72 @@
+* {
+    font-family: Garamond;
+    color: white;
+}
+
+.naglowek {
+    background-color: indigo;
+    text-align: center;
+    padding: 2px;
+}
+
+.sekcja_lewa, 
+.sekcja_prawa {
+    background-color: indigo;
+    height: 600px;
+}
+
+.sekcja_sr {
+    background-color: black;
+    height: 600px;
+    overflow: auto;
+}
+
+.stopka {
+    background-color: indigo;
+    height: 150px;
+    clear: both;
+}
+
+.punkt {
+    background-color: tomato;
+    border-radius: 50%;
+    padding: 5px;
+}
+
+li {
+    padding: 5px;
+}
+
+input {
+    margin: 10px;
+    color: indigo;
+}
+
+.gra {
+    display: inline-block;
+    margin: 10px;
+    text-align: center;
+}
+
+@media screen and (min-width: 800px) {
+    .sekcja_lewa{
+        float: left;
+        width: 20%;
+    }
+    .sekcja_sr {
+        width: 60%;
+        float: left;
+    }
+    .sekcja_prawa {
+        width: 20%;
+        float: left;
+    }
+}
+
+.guzik:hover {
+    background-color: blueviolet;
+}
+
+.guzik {
+    border-radius: 20px;
+}

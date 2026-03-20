@@ -4,7 +4,7 @@ $username = "root";
 $password = "";
 $database = "Zgloszenia";
 
-$connection = new mysqli($server, $username, $password, $database);
+$connection = mysqli_connect($server, $username, $password, $database);
 
 if (!$connection) {
     die($connection);
@@ -21,18 +21,6 @@ if (!$connection) {
 </head>
 
 <body>
-    <?php
-    $server = "localhost";
-    $username = "root";
-    $password = "";
-    $database = "Zgloszenia";
-
-    $connection = mysqli_connect($server, $username, $password, $database);
-
-    if (!$connection) {
-        die($connection);
-    }
-    ?>
     <div class="naglowek">
         <h1>Zgloszenia wydarzeń</h1>
     </div>
@@ -56,8 +44,6 @@ if (!$connection) {
                 </tr>
 
                 <?php
-                $connection = mysqli_connect($server, $username, $password, $database);
-
                 $opcja = "policjant";
                 if (isset($_POST['personel'])) {
                     $opcja = $_POST['personel'];
@@ -74,7 +60,6 @@ if (!$connection) {
                     echo "</tr>";
                 }
                 }
-                 mysqli_close($connection);
                 ?>
             </table>
         </div>
@@ -82,7 +67,6 @@ if (!$connection) {
             <h2>Nowe zgloszenia</h2>
             <ol>
                 <?php
-                $connection = mysqli_connect($server, $username, $password, $database);
                 $query = 'SELECT personel.`id`, personel.`nazwisko` FROM `personel` WHERE personel.id NOT IN (SELECT rejestr.id_personel FROM rejestr)';
                 $wynik_zapytania = mysqli_query($connection, $query);
                 for ($i = 0; $i < mysqli_num_rows($wynik_zapytania); $i++) {
@@ -91,7 +75,6 @@ if (!$connection) {
 
                     echo "<li>$dane[id] $dane[nazwisko]</li>";
                 }
-                mysqli_close($connection);
                 ?>
             </ol>
             <form method="POST">
@@ -106,5 +89,7 @@ if (!$connection) {
         <p>Strone wykonal: xDabloy</p>
     </div>
 </body>
-
+   <?php 
+     mysqli_close($connection);
+   ?>
 </html>
