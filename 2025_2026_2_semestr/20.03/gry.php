@@ -9,30 +9,17 @@
 </head>
 
 <body>
-    <?php
-    $server = "localhost";
-    $username = "root";
-    $password = "";
-    $database = "gry";
-
-    $connection = mysqli_connect($server, $username, $password, $database);
-
-    if (!$connection) {
-        die($connection);
-    }
+        <?php
+    require 'functions.php';
+    $connection = database_connect();
     ?>
     <div class="naglowek"></div>
     <div class="sekcja_lewa">
         <h3>Top 5 gier w tym miesiącu</h3>
         <ul>
-            <?php
-            $query = "SELECT nazwa, punkty FROM gry ORDER BY punkty DESC LIMIT 5";
-            $result = mysqli_query($connection, $query);
-
-            while ($row = mysqli_fetch_row($result)) {
-                echo "<li>" . $row[0] . " <span class='punkt'>" . $row[1] . "</span></li>";
-            }
-            ?>
+             <?php
+                echo skrypt1($connection);
+                ?>
         </ul>
         <h3>Nasz Sklep</h3>
         <a href="http://sklep.gry.pl">Tu kupisz gry</a>
@@ -40,17 +27,9 @@
         <p>xDabloy</p>
     </div>
     <div class="sekcja_sr">
-        <?php
-        $query2 = "SELECT id, nazwa, zdjecie FROM gry";
-        $result2 = mysqli_query($connection, $query2);
-
-        while ($row = mysqli_fetch_row($result2)) {
-            echo "<div class='gra'>";
-            echo "<img src='" . $row[2] . "' alt='" . $row[1] . "' title='" . $row[0] . "'>";
-            echo "<p>" . $row[1] . "</p>";
-            echo "</div>";
-        }
-        ?>
+          <?php
+            echo skrypt2($connection);
+            ?>
     </div>
     <div class="sekcja_prawa">
         <h3>Dodaj nową grę</h3>
@@ -64,12 +43,18 @@
             <input type="text" name="zdjecie" id="zdjeciaid">
             <label for="zdjecie">Zdjęcia</label>
             <button>DODAJ</button>
+            <?php
+                echo skrypt4($connection)
+                    ?>
         </form>
     </div>
     <div class="stopka">
         <form method="POST">
             <input type="text" name="pokaz"">
             <button class=" guzik">Pokaż opis</button>
+             <?php
+            echo skrypt3($connection);
+            ?>
         </form>
     </div>
     <?php
